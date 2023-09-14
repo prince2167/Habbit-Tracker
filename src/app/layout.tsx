@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import Provider from "./Provider";
+import { Navbar } from "@/components";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-white dark:bg-[#111014]`}>
         <Provider>
           <Toaster />
+          <Navbar/>
           {children}
         </Provider>
       </body>

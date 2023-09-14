@@ -1,3 +1,14 @@
+import { useState } from "react";
+import { EditForm } from "..";
+import { useDispatch } from "react-redux";
+import { useAppSelector } from "@/store";
+import {
+  archiveHabit,
+  restoreArchiveHabit,
+  deleteHabit,
+  restoreHabit,
+  IHabit,
+} from "@/features/habitSlice";
 import {
   MdArchive,
   MdUnarchive,
@@ -5,11 +16,9 @@ import {
   FaTrashRestore,
   BiSolidEdit,
 } from "../../assets/icons";
-import { useDispatch } from "react-redux";
-import { archiveHabit, restoreArchiveHabit,deleteHabit, restoreHabit, IHabit } from "@/features/habitSlice";
-import { useAppSelector } from "@/store";
 
 const HabitCard = ({ habit }: any) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const { trash, archive } = useAppSelector((state) => state.habit);
 
@@ -63,10 +72,13 @@ const HabitCard = ({ habit }: any) => {
         <span>0/{habit.goal} times in weak</span>
 
         <div className="flex gap-3">
-          <button className="border-none cursor-pointer">
+          <button
+            className="border-none cursor-pointer"
+            onClick={() => setIsModalOpen(true)}
+          >
             <BiSolidEdit size="22" />
           </button>
-          
+
           {isInarchive ? (
             <button
               onClick={() => unArchiveHabit(habit)}
@@ -100,6 +112,7 @@ const HabitCard = ({ habit }: any) => {
           )}
         </div>
       </div>
+      {isModalOpen && <EditForm habit={habit} onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };

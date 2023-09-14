@@ -10,7 +10,7 @@ interface modalProps {
   onClose: MouseEventHandler;
 }
 
- interface IHabitInput {
+export interface IHabitInput {
   title: string;
   startDate: string;
   endDate: string;

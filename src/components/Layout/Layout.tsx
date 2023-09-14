@@ -6,7 +6,7 @@ interface childrenProps {
 const Layout = ({children}:childrenProps) => {
   return (
     <div>
-        <Navbar/>
+       
         <div className="flex ">
             <Sidebar/>
             <main className=" w-full px-6 py-4 ">{children}</main>

@@ -5,4 +5,5 @@ import CreateHabitModal from "./Modal/CreateHabitModal";
 import EditForm from "./Modal/EditForm";
 import ThemeToggle from "./ThemeToggle.tsx/ThemeToggle";
 import HabitCard from "./HabitCard/HabitCard";
-export { Navbar, Sidebar, Layout, CreateHabitModal, ThemeToggle, HabitCard, EditForm }
+import Loader from "./loader/loader";
+export { Navbar, Sidebar, Layout, CreateHabitModal, ThemeToggle, HabitCard, EditForm, Loader }

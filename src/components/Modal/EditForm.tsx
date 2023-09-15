@@ -1,3 +1,5 @@
+"use client"
+
 import { Fragment, MouseEventHandler, useState } from "react";
 import { IHabitInput } from "./CreateHabitModal";
 import { useDispatch } from "react-redux";

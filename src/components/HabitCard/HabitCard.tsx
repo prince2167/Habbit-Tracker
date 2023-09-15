@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react";
 import { EditForm } from "..";
 import { useDispatch } from "react-redux";

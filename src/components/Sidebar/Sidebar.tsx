@@ -46,7 +46,7 @@ const Sidebar = () => {
           </Link>
 
           <Link
-            href=""
+            href="/profile"
             className=" flex items-center gap-4 text-lg mt-1 py-1.5  px-4 w-full"
           >
             <CgProfile size="25" />
